@@ -1,5 +1,5 @@
 # Ignore files which won`t to be in container
 
-README.md
+*.md
 Dockerfile
 .dockerignore

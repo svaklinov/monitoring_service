@@ -1,5 +1,4 @@
-FROM python:3
-#FROM python:3-slim
+FROM python:3-slim
 
 WORKDIR /usr/src/app
 # Set TERM environment variable
