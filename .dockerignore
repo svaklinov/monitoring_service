@@ -2,3 +2,18 @@
 *.md
 Dockerfile
 .dockerignore
+
+### Terraform ###
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tf
+*.tfstate
+*.tfstate.*
+*.hcl
+
+*.git
+
+# Exclude IaC folder
+IaC/
