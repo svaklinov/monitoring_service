@@ -13,7 +13,7 @@ RUN python3 -m venv /venv && \
      /venv/bin/pip install --no-cache-dir -r requirements.txt
 
 # Use a smaller base image for the final stage
-FROM python:3-slim-bullseye
+FROM python:3.13.0b3-slim
 
 #create the user without setting a password, if an attacker manages to exploit the application, they will have limited privileges and will not have access to the root user’s capabilities.
 RUN adduser --disabled-password --gecos '' appuser
