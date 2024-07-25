@@ -66,17 +66,17 @@ jobs:
       run: |        
         docker rm -f monitoring    
 
-    # - name: Install Snyk
-    #   run: npm install -g snyk
+    - name: Install Snyk
+      run: npm install -g snyk
 
-    # - name: Authenticate Snyk
-    #   run: snyk auth ${{ secrets.SNYK_TOKEN }}
+    - name: Authenticate Snyk
+      run: snyk auth ${{ secrets.SNYK_TOKEN }}
 
-    # - name: Test Docker image with Snyk
-    #   run: snyk container test ${{ secrets.DOCKER_HUB_USERNAME }}/monitoring:latest
+    - name: Test Docker image with Snyk
+      run: snyk container test ${{ secrets.DOCKER_HUB_USERNAME }}/monitoring:latest
 
-    # - name: Monitor Docker image with Snyk
-    #   run: snyk container monitor ${{ secrets.DOCKER_HUB_USERNAME }}/monitoring:latest
+    - name: Monitor Docker image with Snyk
+      run: snyk container monitor ${{ secrets.DOCKER_HUB_USERNAME }}/monitoring:latest
     
     - name: Connect to EC2 and Deploy image
       uses: appleboy/ssh-action@v1.0.3
