@@ -90,5 +90,5 @@ jobs:
           docker rm $(docker ps -a -q)
           docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
           docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/monitoring:latest
-          docker-compose -f /home/${{ secrets.REMOTE_USER }}/docker-compose.yml up -d
+          docker-compose -f /home/${{ secrets.REMOTE_USER }}/docker-compose.yaml up -d
           
