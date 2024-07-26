@@ -90,4 +90,5 @@ jobs:
           docker rm $(docker ps -a -q)
           docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
           docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/monitoring:latest
-          docker run -d --name monitoring -p 80:5000 ${{ secrets.DOCKER_HUB_USERNAME }}/monitoring:latest
+          docker-compose up -d
+          
