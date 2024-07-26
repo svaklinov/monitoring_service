@@ -80,7 +80,7 @@ jobs:
       run: snyk container monitor ${{ secrets.DOCKER_HUB_USERNAME }}/monitoring:latest || true
 
     - name: Copy docker-compose.yml to EC2
-      uses: appleboy/scp-action@v0.1.4
+      uses: appleboy/scp-action@v0.1.7
       with:
         host: ${{ secrets.REMOTE_HOST }}
         username: ${{ secrets.REMOTE_USER }}
