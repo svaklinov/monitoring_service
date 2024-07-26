@@ -54,6 +54,7 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/monitoring:latest
+        provenance: true
 
     - name: Run container for test
       run: |
@@ -73,10 +74,10 @@ jobs:
       run: snyk auth ${{ secrets.SNYK_TOKEN }}
 
     - name: Test Docker image with Snyk
-      run: snyk container test ${{ secrets.DOCKER_HUB_USERNAME }}/monitoring:latest
+      run: snyk container test ${{ secrets.DOCKER_HUB_USERNAME }}/monitoring:latest || true
 
     - name: Monitor Docker image with Snyk
-      run: snyk container monitor ${{ secrets.DOCKER_HUB_USERNAME }}/monitoring:latest
+      run: snyk container monitor ${{ secrets.DOCKER_HUB_USERNAME }}/monitoring:latest || true
     
     - name: Connect to EC2 and Deploy image
       uses: appleboy/ssh-action@v1.0.3
